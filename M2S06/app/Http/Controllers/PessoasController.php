@@ -23,7 +23,7 @@ class PessoasController extends Controller
         try{
             $request->validate([
                 'name' => 'required | min: 3 | max: 150',
-                'cpf' => 'min: 11 | max: 20',
+                'cpf' => 'min: 11 | max: 20 |unique:pessoas,cpf',
                 'contact' => 'max: 20',
             ]);
 
