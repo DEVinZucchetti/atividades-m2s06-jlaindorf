@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('cdf', 20)->nullable();
             $table->string('contact', 20)->nullable();
             $table->timestamps();
+            $table->renameColumn('cdf', 'cpf');
+            $table->unique('cpf');
         });
 
     }
