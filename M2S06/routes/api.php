@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PessoasController;
 
 
-Route::prefix('pessoas')->group(function(){
+Route::resource('pessoas', PessoasController::class)->only([
 
-    Route::get('',[PessoasController::class, 'all']);
-    Route::post('',[PessoasController::class, 'store']);
-    Route::put('{id}',[PessoasController::class, 'update']);
-    
+'index',
+'show',
+'store',
+'update',
+'destroy'
 
-});
+
+]);
